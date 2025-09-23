@@ -19,7 +19,7 @@ const dbConfig = {
 const pool = mysql.createPool(dbConfig);
 
 //* Funcion para probar la conexion
-export const testConnection = async () => {
+const testConnection = async () => {
     try {
         const connection = await pool.getConnection()
         console.log('✅ Conexion a MySQL (base de datos) establecida correctamente');
