@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { testConnection } from '../config/database.js';
+import authRoutes from './routes/auth.js'
 
 dotenv.config();
 const app = express();         
@@ -11,6 +12,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors())            // Permite CORS para todas las rutas
 app.use(express.json())    // Permite leer JSON en los requests
 
+
+//* Rutas de la api
+app.use('/api/auth', authRoutes)
 
 //* Ruta de prueba
 app.get('/', (req, res) => {
