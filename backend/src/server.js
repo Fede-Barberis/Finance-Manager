@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { testConnection } from '../config/database.js';
 import authRoutes from './routes/auth.js'
+import categoryRoutes from './routes/categories.js'
+import transactionRoutes from './routes/transactions.js'
 
 dotenv.config();
 const app = express();         
@@ -15,6 +17,8 @@ app.use(express.json())    // Permite leer JSON en los requests
 
 //* Rutas de la api
 app.use('/api/auth', authRoutes)
+app.use('/api/categories', categoryRoutes)
+app.use('/api/transactions', transactionRoutes)
 
 //* Ruta de prueba
 app.get('/', (req, res) => {
