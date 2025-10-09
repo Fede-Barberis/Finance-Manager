@@ -5,6 +5,7 @@ import { testConnection } from '../config/database.js';
 import authRoutes from './routes/auth.js'
 import categoryRoutes from './routes/categories.js'
 import transactionRoutes from './routes/transactions.js'
+import budgetRoutes from './routes/budgets.js'
 
 dotenv.config();
 const app = express();         
@@ -19,6 +20,8 @@ app.use(express.json())    // Permite leer JSON en los requests
 app.use('/api/auth', authRoutes)
 app.use('/api/categories', categoryRoutes)
 app.use('/api/transactions', transactionRoutes)
+app.use('/api/budgets', budgetRoutes)
+
 
 //* Ruta de prueba
 app.get('/', (req, res) => {
