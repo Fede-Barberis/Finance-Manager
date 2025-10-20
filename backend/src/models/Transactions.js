@@ -37,7 +37,7 @@ class Transaction {
                 [tipo, descripcion, parseFloat(monto), fecha, parseInt(categoria_id), parseInt(usuario_id)]
             )
 
-            // Obtener transacción creada (consistente con Categories)
+            // Obtener transacción creada (consistente con Categories) 
             const newTransaction = await Transaction.findById(result.insertId)
             return newTransaction
         }
@@ -196,7 +196,6 @@ class Transaction {
 
             // Actualizar el objeto actual
             Object.assign(this, updateData);
-            
             return this;
         }
         catch (error) {

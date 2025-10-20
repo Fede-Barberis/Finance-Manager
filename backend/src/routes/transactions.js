@@ -1,4 +1,4 @@
-// routes/categories.js
+// routes/transactions.js
 import express from 'express';
 import transactionControllers from '../controllers/transactionControllers.js';
 import authenticateToken from '../middleware/auth.js';

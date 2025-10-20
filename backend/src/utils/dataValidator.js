@@ -9,7 +9,8 @@
  */
 
 export function validarFecha(fecha, validarAnioActual = false) {
-    const [yearStr, monthStr, dayStr] = fecha.split("-");
+    const partes = fecha.includes("/") ? fecha.split("/") : fecha.split("-");
+    const [yearStr, monthStr, dayStr] = partes;
     const year = parseInt(yearStr, 10);
     const month = parseInt(monthStr, 10);
     const day = parseInt(dayStr, 10);
