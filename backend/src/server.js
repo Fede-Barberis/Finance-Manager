@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.js'
 import categoryRoutes from './routes/categories.js'
 import transactionRoutes from './routes/transactions.js'
 import budgetRoutes from './routes/budgets.js'
+import goalRoutes from './routes/goals.js'
 
 dotenv.config();
 const app = express();         
@@ -21,6 +22,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/categories', categoryRoutes)
 app.use('/api/transactions', transactionRoutes)
 app.use('/api/budgets', budgetRoutes)
+app.use('/api/goals', goalRoutes)
 
 
 //* Ruta de prueba
