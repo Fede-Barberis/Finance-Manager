@@ -198,7 +198,7 @@ class Budget {
     static async findByName(usuario_id, nombre) {
         try {
             const [rows] = await pool.execute(
-                'SELECT * FROM budgets WHERE usuario_id = ? AND nombre LIKE ?',
+                'SELECT * FROM budgets WHERE usuario_id = ? AND nombre LIKE ? ORDER BY id ASC',
                 [usuario_id, `%${nombre}%`]
             )
 
@@ -206,7 +206,7 @@ class Budget {
                 return null
             }
 
-            return new Budget(rows[0])
+            return rows.map(budgetData => new Budget(budgetData))
         }
         catch (error) {
             throw error

@@ -205,17 +205,10 @@ const budgetController = {
                 })
             }
 
-            if(budget.usuario_id !== userId){
-                return res.status(403).json({
-                    success: false,
-                    message: 'No tienes permisos para ver este presupuesto'
-                })
-            }
-
             res.json({
                 success: true,
                 data: {
-                    budget: budget.toJSON()
+                    budget: budget.map(bud => bud.toJSON())
                 }
             })
         }
